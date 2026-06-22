@@ -115,35 +115,3 @@ Fieldcraft is not:
 
 Fieldcraft is a compact review protocol for product UI decisions around fields,
 validation, previews, and final actions.
-
-## Repository Shape
-
-```text
-skills/
-  product-form-ux/
-    SKILL.md
-    agents/
-      openai.yaml
-    references/
-      browser-review.md
-      form-flow.md
-      inline-feedback.md
-      output-panel-boundaries.md
-adapters/
-  opencode/
-    product-form-ux.md
-assets/
-  fieldcraft.svg
-  fieldcraft.svg.prompt.md
-  fieldcraft-banner.svg
-  fieldcraft-banner.svg.prompt.md
-.github/
-  workflows/
-    ci.yml
-flake.nix
-flake.lock
-```
-
-## License
-
-MIT

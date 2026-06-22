@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
   <title id="title">Fieldcraft</title>
-  <desc id="desc">A product form review banner showing feedback moving from a status panel back to fields.</desc>
+  <desc id="desc">A product form review banner showing field feedback, form flow, and output boundary checks.</desc>
   <defs>
     <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
       <stop offset="0" stop-color="#10201c"/>
@@ -14,29 +14,42 @@
   <rect width="1200" height="420" rx="42" fill="url(#bg)"/>
   <circle cx="1065" cy="88" r="150" fill="#f0b84a" opacity=".12"/>
   <circle cx="104" cy="352" r="118" fill="#f7fbf8" opacity=".08"/>
-  <g transform="translate(76 76)">
+  <g transform="translate(78 86)">
     <rect x="0" y="0" width="92" height="92" rx="24" fill="#f7fbf8"/>
     <path d="M24 29h22M24 46h44M24 63h31" fill="none" stroke="#2e7d6b" stroke-width="6" stroke-linecap="round"/>
     <circle cx="68" cy="63" r="15" fill="#f0b84a"/>
     <path d="M61 63l5 5 10-12" fill="none" stroke="#10201c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
-  <text x="76" y="218" fill="#f7fbf8" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="76" font-weight="760">Fieldcraft</text>
-  <text x="78" y="264" fill="#d9eee8" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="30" font-weight="520">Move form feedback back to</text>
-  <text x="78" y="304" fill="#d9eee8" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="30" font-weight="520">where users can act on it.</text>
-  <g transform="translate(690 66)" filter="url(#shadow)">
-    <rect x="0" y="0" width="410" height="288" rx="24" fill="#f7fbf8"/>
-    <rect x="30" y="34" width="210" height="18" rx="9" fill="#2e7d6b"/>
-    <rect x="30" y="73" width="238" height="34" rx="10" fill="#edf4f1" stroke="#c7ddd5"/>
-    <rect x="30" y="123" width="238" height="34" rx="10" fill="#fff8e8" stroke="#f0b84a"/>
-    <text x="42" y="146" fill="#694800" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="14" font-weight="650">Explain it here</text>
-    <rect x="30" y="183" width="238" height="34" rx="10" fill="#edf4f1" stroke="#c7ddd5"/>
-    <rect x="296" y="34" width="84" height="190" rx="14" fill="#e8f1ee"/>
-    <rect x="314" y="58" width="48" height="10" rx="5" fill="#97bbb0"/>
-    <rect x="314" y="82" width="48" height="10" rx="5" fill="#97bbb0"/>
-    <rect x="314" y="106" width="48" height="10" rx="5" fill="#97bbb0"/>
-    <path d="M316 162c-45 0-75-16-102-42" fill="none" stroke="#f0b84a" stroke-width="7" stroke-linecap="round"/>
-    <path d="M217 116l-11 5 5-12" fill="#f0b84a"/>
-    <rect x="30" y="238" width="158" height="22" rx="11" fill="#10201c"/>
-    <rect x="202" y="238" width="104" height="22" rx="11" fill="#2e7d6b"/>
+  <text x="196" y="150" fill="#f7fbf8" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="76" font-weight="760">Fieldcraft</text>
+  <text x="80" y="252" fill="#d9eee8" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="31" font-weight="520">Move form feedback back to</text>
+  <text x="80" y="293" fill="#d9eee8" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="31" font-weight="520">where users can act on it.</text>
+  <g transform="translate(650 58)" filter="url(#shadow)">
+    <rect x="0" y="0" width="470" height="306" rx="26" fill="#f7fbf8"/>
+    <g transform="translate(30 30)">
+      <rect x="0" y="0" width="126" height="246" rx="18" fill="#eef6f3" stroke="#c7ddd5"/>
+      <text x="18" y="34" fill="#10201c" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="16" font-weight="720">Feedback</text>
+      <rect x="18" y="58" width="88" height="16" rx="8" fill="#2e7d6b"/>
+      <rect x="18" y="92" width="88" height="28" rx="9" fill="#fff8e8" stroke="#f0b84a"/>
+      <rect x="30" y="131" width="64" height="8" rx="4" fill="#f0b84a"/>
+      <rect x="18" y="158" width="88" height="18" rx="9" fill="#dbeae5"/>
+    </g>
+    <g transform="translate(172 30)">
+      <rect x="0" y="0" width="126" height="246" rx="18" fill="#eef6f3" stroke="#c7ddd5"/>
+      <text x="31" y="34" fill="#10201c" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="16" font-weight="720">Flow</text>
+      <rect x="20" y="62" width="38" height="22" rx="11" fill="#2e7d6b"/>
+      <rect x="66" y="62" width="38" height="22" rx="11" fill="#dbeae5"/>
+      <path d="M34 124h58M82 114l14 10-14 10" fill="none" stroke="#f0b84a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="20" y="160" width="84" height="18" rx="9" fill="#dbeae5"/>
+      <rect x="20" y="190" width="62" height="18" rx="9" fill="#2e7d6b" opacity=".7"/>
+    </g>
+    <g transform="translate(314 30)">
+      <rect x="0" y="0" width="126" height="246" rx="18" fill="#eef6f3" stroke="#c7ddd5"/>
+      <text x="22" y="34" fill="#10201c" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="16" font-weight="720">Output</text>
+      <rect x="20" y="60" width="86" height="108" rx="13" fill="#ffffff" stroke="#c7ddd5"/>
+      <rect x="34" y="82" width="58" height="9" rx="4.5" fill="#97bbb0"/>
+      <rect x="34" y="105" width="58" height="9" rx="4.5" fill="#97bbb0"/>
+      <rect x="34" y="128" width="38" height="9" rx="4.5" fill="#97bbb0"/>
+      <rect x="20" y="190" width="86" height="22" rx="11" fill="#10201c"/>
+    </g>
   </g>
 </svg>
