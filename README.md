@@ -5,10 +5,6 @@
 <h1 align="center">Fieldcraft</h1>
 
 <p align="center">
-  Move form feedback back to where users can act on it.
-</p>
-
-<p align="center">
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/github/license/bioinformatist/fieldcraft?style=flat-square"></a>
   <a href="https://github.com/bioinformatist/fieldcraft/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/bioinformatist/fieldcraft/ci.yml?branch=main&style=flat-square"></a>
   <a href="https://agentskills.io/"><img alt="Agent Skills" src="https://img.shields.io/badge/Agent%20Skills-SKILL.md-2e7d6b?style=flat-square"></a>
@@ -22,17 +18,6 @@ interfaces: setup flows, configuration generators, admin settings, onboarding
 forms, and similar screens where feedback, preview, and final actions have to
 stay close to the user's current decision.
 
-## Why This Exists
-
-Most frontend design skills focus on visual style, marketing pages, or a
-specific component stack. Fieldcraft focuses on product UI craft:
-
-- field-local validation and help
-- form flow and progressive disclosure
-- clear boundaries between input, preview, output, and actions
-- browser-backed review when evidence is available
-- source-only review with explicit confidence when no browser is available
-
 ## What Fieldcraft Checks
 
 | Area | What it catches | Better shape |
@@ -41,14 +26,14 @@ specific component stack. Fieldcraft focuses on product UI craft:
 | Form flow | Hidden-mode errors, unclear required fields, and disabled actions without reasons | Match guidance to the current choice and explain blockers locally |
 | Output boundaries | Preview or status panels becoming the main place users discover mistakes | Keep output panels for generated files, commands, logs, and final actions |
 
-## Related Tools
+## Scope
 
-Fieldcraft is designed to work with, not compete with, mature tools:
-
-- Playwright CLI or Playwright MCP for rendered browser evidence.
-- Lighthouse, axe, WCAG-focused tooling, or web-quality skills for broader
-  quality and accessibility audits.
-- The project's own component library and design system for implementation.
+| Fieldcraft owns | Use mature tools for | Out of scope |
+|-----------------|----------------------|--------------|
+| Field-local validation and help | Browser automation and screenshots with Playwright CLI or Playwright MCP | Visual preset packs |
+| Form flow and progressive disclosure | Performance, SEO, and broad quality audits with Lighthouse or web-quality skills | Framework-specific component stacks |
+| Input, preview, output, and action boundaries | Deep accessibility audits with axe or WCAG-focused tooling | Replacing a project's design system |
+| Source-only review with explicit confidence limits | Console logs, network checks, and runtime debugging from browser tooling | A guarantee of a particular visual style |
 
 ## Install
 
@@ -103,15 +88,3 @@ form, or similar UI.
 
 Then ask your coding agent to use `product-form-ux` when reviewing or changing a
 form-heavy product UI.
-
-## Boundaries
-
-Fieldcraft is not:
-
-- a visual preset pack
-- a replacement for Playwright, Lighthouse, axe, or WCAG auditors
-- a React, Tailwind, shadcn/ui, Leptos, or NixOS-specific workflow
-- a guarantee of a particular visual style
-
-Fieldcraft is a compact review protocol for product UI decisions around fields,
-validation, previews, and final actions.
