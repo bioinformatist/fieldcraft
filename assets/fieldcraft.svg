@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Fieldcraft</title>
+  <desc id="desc">A field grid with a marker for product form review.</desc>
+  <rect width="128" height="128" rx="28" fill="#10201c"/>
+  <path d="M32 34h64a10 10 0 0 1 10 10v40a10 10 0 0 1-10 10H32a10 10 0 0 1-10-10V44a10 10 0 0 1 10-10Z" fill="#f7fbf8"/>
+  <path d="M36 50h28M36 64h56M36 78h38" fill="none" stroke="#2e7d6b" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="92" cy="78" r="17" fill="#f0b84a"/>
+  <path d="M84 78l6 6 12-14" fill="none" stroke="#10201c" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
