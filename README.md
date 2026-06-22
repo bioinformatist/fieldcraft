@@ -10,6 +10,7 @@
 
 <p align="center">
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/github/license/bioinformatist/fieldcraft?style=flat-square"></a>
+  <a href="https://github.com/bioinformatist/fieldcraft/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/bioinformatist/fieldcraft/ci.yml?branch=main&style=flat-square"></a>
   <a href="https://agentskills.io/"><img alt="Agent Skills" src="https://img.shields.io/badge/Agent%20Skills-SKILL.md-2e7d6b?style=flat-square"></a>
   <img alt="Codex" src="https://img.shields.io/badge/Codex-ready-111827?style=flat-square">
   <img alt="Claude Code" src="https://img.shields.io/badge/Claude%20Code-ready-6b5cff?style=flat-square">
@@ -136,6 +137,11 @@ assets/
   fieldcraft.svg.prompt.md
   fieldcraft-banner.svg
   fieldcraft-banner.svg.prompt.md
+.github/
+  workflows/
+    ci.yml
+flake.nix
+flake.lock
 ```
 
 ## License
