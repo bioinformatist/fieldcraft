@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Without Fieldcraft</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #eef3f1;
+        color: #14211d;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #f7faf8 0%, #e4eeea 100%);
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 360px;
+        gap: 24px;
+        width: 1120px;
+        margin: 0 auto;
+        padding: 42px 0;
+      }
+
+      section,
+      aside {
+        border: 1px solid #c8d9d2;
+        border-radius: 18px;
+        background: #ffffff;
+        box-shadow: 0 18px 45px rgba(23, 53, 46, 0.12);
+      }
+
+      section {
+        padding: 30px;
+      }
+
+      aside {
+        padding: 24px;
+      }
+
+      h1,
+      h2 {
+        margin: 0;
+        letter-spacing: 0;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+
+      .intro {
+        margin: 8px 0 26px;
+        color: #52645d;
+        font-size: 15px;
+      }
+
+      .field {
+        margin-top: 22px;
+      }
+
+      label,
+      legend {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+        font-weight: 720;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        height: 44px;
+        border: 1px solid #bacdc5;
+        border-radius: 10px;
+        padding: 0 12px;
+        font: inherit;
+      }
+
+      fieldset {
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+
+      .choices {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .choice {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-height: 44px;
+        border: 1px solid #bacdc5;
+        border-radius: 10px;
+        padding: 0 12px;
+        background: #f9fbfa;
+      }
+
+      .toggle-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 52px;
+        border: 1px solid #bacdc5;
+        border-radius: 12px;
+        padding: 0 14px;
+        background: #f9fbfa;
+      }
+
+      .switch {
+        width: 48px;
+        height: 26px;
+        border-radius: 13px;
+        background: #2e7d6b;
+        position: relative;
+      }
+
+      .switch::after {
+        content: "";
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #ffffff;
+      }
+
+      .status {
+        margin-top: 18px;
+        border: 1px solid #f0b84a;
+        border-radius: 14px;
+        padding: 16px;
+        background: #fff8e8;
+      }
+
+      .status h2 {
+        margin-bottom: 12px;
+      }
+
+      .status ul {
+        margin: 0;
+        padding-left: 18px;
+        color: #6d4d04;
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .preview {
+        margin-top: 22px;
+        border-radius: 12px;
+        background: #10201c;
+        color: #d9eee8;
+        padding: 14px;
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      button {
+        width: 100%;
+        height: 44px;
+        margin-top: 18px;
+        border: 0;
+        border-radius: 10px;
+        background: #9fb8ae;
+        color: #ffffff;
+        font: inherit;
+        font-weight: 720;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <h1>Workstation setup</h1>
+        <p class="intro">Generate a small NixOS installer package.</p>
+
+        <div class="field">
+          <label for="machine">Machine name</label>
+          <input id="machine" type="text" value="Lab Workstation!">
+        </div>
+
+        <div class="field">
+          <fieldset>
+            <legend>Authentication</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="auth-method" checked> SSH public key</label>
+              <label class="choice"><input type="radio" name="auth-method"> Initial password</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="field">
+          <label for="ssh-key">SSH public key</label>
+          <input id="ssh-key" type="text" value="">
+        </div>
+
+        <div class="field">
+          <div class="toggle-row">
+            <strong>Force Nix daemon proxy</strong>
+            <span class="switch" aria-hidden="true"></span>
+          </div>
+        </div>
+      </section>
+
+      <aside>
+        <h2>Status</h2>
+        <div class="status">
+          <h2>Needs attention</h2>
+          <ul>
+            <li>Machine name can only use lowercase letters, numbers, and hyphens.</li>
+            <li>SSH public key is required before generating the package.</li>
+            <li>Proxy users must configure the proxy service after install.</li>
+          </ul>
+        </div>
+        <div class="preview">
+          hosts/workstation/default.nix<br>
+          users/admin.nix<br>
+          install.sh
+        </div>
+        <button disabled>Download package</button>
+      </aside>
+    </main>
+  </body>
+</html>

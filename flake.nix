@@ -33,6 +33,17 @@
               python
             ];
           };
+
+          examples = pkgs.mkShell {
+            packages = [
+              pkgs.nodejs_22
+            ] ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
+              pkgs.chromium
+            ];
+            shellHook = pkgs.lib.optionalString pkgs.stdenv.isLinux ''
+              export CHROMIUM_BIN="${pkgs.chromium}/bin/chromium"
+            '';
+          };
         }
       );
 
@@ -47,7 +58,9 @@
             src = self;
             nativeBuildInputs = [
               pkgs.actionlint
+              pkgs.fontconfig
               pkgs.librsvg
+              pkgs.nodejs_22
             ];
             dontConfigure = true;
             dontBuild = true;
@@ -56,6 +69,7 @@
 
               export HOME="$TMPDIR/home"
               export XDG_CACHE_HOME="$TMPDIR/xdg-cache"
+              export FONTCONFIG_FILE="${pkgs.fontconfig.out}/etc/fonts/fonts.conf"
               mkdir -p "$HOME" "$XDG_CACHE_HOME"
 
               for svg in assets/*.svg; do
@@ -68,6 +82,11 @@
               done
 
               find .github/workflows -type f \( -name '*.yml' -o -name '*.yaml' \) -exec actionlint {} +
+
+              test -f examples/form-feedback-comparison/comparison.png
+              test -f examples/form-feedback-comparison/without-fieldcraft/index.html
+              test -f examples/form-feedback-comparison/with-fieldcraft/index.html
+              node --check scripts/render-example-comparison.mjs
 
               mkdir -p "$out"
               touch "$out/ok"

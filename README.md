@@ -26,6 +26,15 @@ stay close to the user's current decision.
 | Form flow | Hidden-mode errors, unclear required fields, and disabled actions without reasons | Match guidance to the current choice and explain blockers locally |
 | Output boundaries | Preview or status panels becoming the main place users discover mistakes | Keep output panels for generated files, commands, logs, and final actions |
 
+## Example
+
+The [form feedback comparison](examples/form-feedback-comparison/) shows the
+same setup form before and after applying Fieldcraft's review guidance.
+
+<p align="center">
+  <img src="examples/form-feedback-comparison/comparison.png" alt="Form feedback comparison" width="100%">
+</p>
+
 ## Scope
 
 | Fieldcraft owns | Use mature tools for | Out of scope |
