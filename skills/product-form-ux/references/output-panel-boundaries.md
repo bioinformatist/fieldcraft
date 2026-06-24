@@ -33,6 +33,29 @@ They are not appropriate as the only location for:
 - field format guidance
 - ordinary contextual help
 
+## Option-Owned Checks
+
+Checks, confirmations, warnings, and preflight commands that apply only to one
+option should stay with that option and its local confirmation. Do not move them
+into the general output panel unless they are truly global.
+
+Use this rule for option-owned commands, regional/network checks, permissions
+checks, destructive confirmations, and other conditional prerequisites. The
+output panel should remain focused on artifacts, previews, final commands,
+downloads, and logs.
+
+## Artifact Actions
+
+Generated commands, file previews, export artifacts, and preflight snippets need
+local actions:
+
+- Put copy/download actions on or next to the exact artifact being copied or
+  downloaded.
+- Avoid duplicate global and local actions for the same artifact unless they
+  serve distinct workflow roles.
+- Keep success/failure feedback local to the action that produced it.
+- Prefer short-lived local feedback that does not shift layout.
+
 ## Status Summary Rules
 
 If a status summary exists:
