@@ -5,6 +5,19 @@ evidence path, not a required runtime mode. It may be local headed browser,
 Playwright CLI, Playwright MCP, Browser Use, CI screenshots, or headless
 Chromium.
 
+## Contents
+
+- Tooling requirements
+- Reuse mature tools
+- Minimum evidence set
+- Final action evidence
+- What to look for
+- Long technical content
+- Interactive help evidence
+- Multilingual forms
+- Source-only fallback
+- Session discipline
+
 ## Tooling Requirements
 
 Fieldcraft does not install browser automation tools. Browser evidence requires
@@ -82,6 +95,38 @@ Check whether:
 
 If screenshots show missing fonts, broken assets, or tofu glyphs, mark visual
 judgment as lower confidence until the review environment is fixed.
+
+## Long Technical Content
+
+Check mobile and desktop overflow when forms render long technical content such
+as URLs, commands, paths, keys, identifiers, package names, or generated
+snippets. The page should not become wider than the viewport.
+
+Useful checks include:
+
+- Verify `document.body.scrollWidth <= window.innerWidth` after long content is
+  rendered.
+- Inspect code blocks, fieldsets, flex/grid children, and unbreakable inline
+  text.
+- Look for missing `min-width: 0`, wrapping rules, or local horizontal scrolling
+  on the content container.
+
+## Interactive Help Evidence
+
+For interactive help or popover-like content, verify that users can move from
+the trigger into the panel, select text, click controls, and use keyboard focus
+without the panel disappearing.
+
+## Multilingual Forms
+
+For multilingual form-heavy interfaces, check that:
+
+- the default locale is intentional;
+- validation text, help text, tooltips, copy feedback, and action labels are
+  translated;
+- fallback behavior is acceptable;
+- language switching does not reset user input unexpectedly;
+- generated technical identifiers remain unchanged when they should.
 
 ## Source-Only Fallback
 
