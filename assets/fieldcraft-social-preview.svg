@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">Fieldcraft social preview</title>
+  <desc id="desc">A 1280 by 640 social preview image derived from the Fieldcraft README banner.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#10201c"/>
+      <stop offset="0.58" stop-color="#17352e"/>
+      <stop offset="1" stop-color="#2e7d6b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="640" fill="url(#bg)"/>
+  <image href="fieldcraft-banner.svg" x="0" y="96" width="1280" height="448" preserveAspectRatio="xMidYMid meet"/>
+</svg>
