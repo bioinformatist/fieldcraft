@@ -5,6 +5,20 @@ evidence path, not a required runtime mode. It may be local headed browser,
 Playwright CLI, Playwright MCP, Browser Use, CI screenshots, or headless
 Chromium.
 
+## Tooling Requirements
+
+Fieldcraft does not install browser automation tools. Browser evidence requires
+one browser path supplied by the host agent environment:
+
+- Playwright CLI or Playwright MCP.
+- Browser Use or another browser-control integration.
+- Local Chromium, Chrome, Firefox, or another browser the agent can drive.
+- Existing CI screenshots, user screenshots, or saved browser traces.
+
+If the user explicitly asks for screenshots, interaction, or browser evidence,
+do not silently downgrade to source-only review. Report the missing browser path
+and continue source-only only when the user accepts that fallback.
+
 ## Reuse Mature Tools
 
 Do not reimplement browser automation or quality auditing in this skill:
@@ -34,6 +48,22 @@ When practical, capture:
 If the app has multiple steps, capture the transition between steps and the
 first error state after attempting to continue.
 
+## Final Action Evidence
+
+Treat final actions as successful only after verifying their side effect:
+
+- For copy actions, read the clipboard when available or paste into a temporary
+  field and compare the value.
+- For download actions, verify the browser download event, downloaded file, or
+  archive contents.
+- For generate or export actions, confirm the artifact matches the current form
+  state and changes when relevant options change.
+
+A toast, flash message, enabled button, clean console, or click handler call is
+not enough evidence that the action worked. For secure-context APIs such as the
+Clipboard API, test the same origin the user will use when practical; behavior
+can differ between `localhost`, LAN HTTP URLs, and HTTPS.
+
 ## What To Look For
 
 Check whether:
@@ -47,6 +77,8 @@ Check whether:
 - Field groups have clear accessible names.
 - Tabbing follows the visible flow.
 - Browser-rendered text, icons, and fonts actually load.
+- Final action success states match the actual copy, download, generate, export,
+  or submit result.
 
 If screenshots show missing fonts, broken assets, or tofu glyphs, mark visual
 judgment as lower confidence until the review environment is fixed.

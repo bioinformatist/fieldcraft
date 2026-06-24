@@ -34,6 +34,15 @@ If the Skill files are not available, apply this compact protocol:
 - Keep preview and output panels focused on generated files, commands, logs,
   or final actions.
 - Give disabled actions a local reason near the button or missing field.
+- Verify final action side effects: copied text, downloaded files, generated
+  artifacts, exported data, or submitted state. A toast or clean console is not
+  enough.
+
+Browser evidence requires an available browser path such as Playwright CLI,
+Playwright MCP, Browser Use, local Chromium/Chrome, or existing screenshots. If
+the user explicitly requests screenshots, interaction, or browser evidence and
+no browser path is available, report that as a blocker instead of silently
+falling back to source-only review.
 
 Return findings by severity, include the browser or source evidence used, and
 make clear when a visual finding is inferred rather than directly observed.
