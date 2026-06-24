@@ -44,6 +44,19 @@ same setup form before and after applying Fieldcraft's review guidance.
 | Input, preview, output, and action boundaries | Deep accessibility audits with axe or WCAG-focused tooling | Replacing a project's design system |
 | Source-only review with explicit confidence limits | Console logs, network checks, and runtime debugging from browser tooling | A guarantee of a particular visual style |
 
+## Browser Evidence
+
+Fieldcraft does not install Playwright, browser binaries, MCP servers, or other
+browser-control tools. It can review source code without a browser, but
+screenshots and interaction evidence require the host agent environment to
+provide a browser path such as Playwright CLI, Playwright MCP, Browser Use,
+local Chromium/Chrome, or existing CI/user screenshots.
+
+If you explicitly ask for screenshots or browser interaction and no browser path
+is available, the agent should report the missing tool instead of silently
+downgrading to source-only review. Source-only review is still useful when you
+accept that fallback, and findings should mark visual layout claims as inferred.
+
 ## Install
 
 | Agent | Support | Install |

@@ -60,3 +60,16 @@ Use standard UI copy for standard actions:
 
 Keep visible text specific and useful. Remove filler labels, decorative status
 phrases, and repeated explanatory paragraphs that do not change user action.
+
+## Successful Path Discipline
+
+The successful path ends after the final action's side effect is verified, not
+after the button becomes enabled:
+
+- Copy actions should produce the expected clipboard value.
+- Download actions should produce the expected file or archive.
+- Generate and export actions should produce artifacts that match the current
+  fields and options.
+
+Do not let a toast, optimistic state update, or lack of console errors stand in
+for the action result.

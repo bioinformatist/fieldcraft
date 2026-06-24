@@ -59,3 +59,17 @@ Final actions should make their availability understandable:
 
 Avoid one generic "not ready" message for actions with different readiness
 rules.
+
+## Success Messages
+
+Success messages must be tied to the real action result, not optimistic UI
+state:
+
+- "Copied" means the clipboard value was written or otherwise verified.
+- "Downloaded" means the browser produced the file and, when relevant, the file
+  or archive contents match the current form state.
+- "Generated" or "Exported" means the artifact reflects the current fields and
+  options.
+
+Do not treat an enabled button, toast, flash message, or console-clean click as
+proof that a final action succeeded.
